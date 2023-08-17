@@ -1,10 +1,8 @@
-# OneConfigExampleMod
-Example mod implementing OneConfig.
+# ArmorOCHUD
+A standalone armor display HUD built with OneConfig
 
-## How to use
+![HUD Editor](images/hud-editor.png)
 
-- Copy the template either by using GitHub's "Use this template" feature or downloading the repo manually.
-- **Remove the license named "LICENSE-TEMPLATE" and choose a new one.**
-- Refactor the template (specifically, the modid, version and name in the gradle.properties and most of the class names)
-  to a different name.
-- Have fun modding! :D
+![Settings Page General](images/settings-page.png)
+
+![Settings Page Mainhand](images/settings-page2.png)
