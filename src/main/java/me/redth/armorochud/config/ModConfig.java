@@ -14,7 +14,7 @@ import me.redth.armorochud.hud.BootsHUD;
 import me.redth.armorochud.hud.ChestplateHUD;
 import me.redth.armorochud.hud.HelmetHUD;
 import me.redth.armorochud.hud.LeggingsHUD;
-import me.redth.armorochud.hud.MainhandHUD;
+import me.redth.armorochud.hud.HandHUD;
 
 @SuppressWarnings("unused")
 public class ModConfig extends Config {
@@ -28,8 +28,8 @@ public class ModConfig extends Config {
     @Color(name = "Static Text Color")
     public static OneColor staticTextColor = new OneColor(0xFFFFFFFF);
 
-    @HUD(name = "Mainhand", category = "Mainhand")
-    public MainhandHUD mainhandHUD = new MainhandHUD();
+    @HUD(name = "Hand", category = "Hand")
+    public HandHUD handHUD = new HandHUD();
 
     @HUD(name = "Helmet", category = "Helmet")
     public HelmetHUD helmetHUD = new HelmetHUD();

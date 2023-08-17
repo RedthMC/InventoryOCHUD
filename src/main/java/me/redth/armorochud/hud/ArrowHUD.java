@@ -29,7 +29,11 @@ public class ArrowHUD extends SingleItemHud {
             }
         }
 
-        return (arrows == 0) ? barrier : new ItemStack(Items.arrow, arrows);
+        if (mc.thePlayer.capabilities.isCreativeMode) {
+            return new ItemStack(Items.arrow);
+        } else {
+            return arrows == 0 ? barrier : new ItemStack(Items.arrow, arrows);
+        }
     }
 
     private static boolean isHoldingBow() {
