@@ -9,6 +9,7 @@ import cc.polyfrost.oneconfig.config.core.OneColor;
 import cc.polyfrost.oneconfig.config.data.Mod;
 import cc.polyfrost.oneconfig.config.data.ModType;
 import me.redth.armorochud.ArmorOCHUD;
+import me.redth.armorochud.hud.ArrowHUD;
 import me.redth.armorochud.hud.BootsHUD;
 import me.redth.armorochud.hud.ChestplateHUD;
 import me.redth.armorochud.hud.HelmetHUD;
@@ -41,6 +42,9 @@ public class ModConfig extends Config {
 
     @HUD(name = "Boots", category = "Boots")
     public BootsHUD bootsHUD = new BootsHUD();
+
+    @HUD(name = "Arrows", category = "Arrows")
+    public ArrowHUD arrowHUD = new ArrowHUD();
 
     public ModConfig() {
         super(new Mod(ArmorOCHUD.NAME, ModType.HUD), ArmorOCHUD.MODID + ".json");

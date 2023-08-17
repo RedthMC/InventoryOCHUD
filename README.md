@@ -5,4 +5,4 @@ A standalone armor display HUD built with OneConfig
 
 ![Settings Page General](images/settings-page1.png)
 
-![Settings Page Mainhand](images/settings-page2.png)
+![Settings Page Arrows](images/settings-page3.png)
