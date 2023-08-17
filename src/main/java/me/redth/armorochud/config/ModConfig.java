@@ -43,7 +43,7 @@ public class ModConfig extends Config {
     @HUD(name = "Boots", category = "Boots")
     public BootsHUD bootsHUD = new BootsHUD();
 
-    @HUD(name = "Arrows", category = "Arrows")
+    @HUD(name = "Arrow", category = "Arrow")
     public ArrowHUD arrowHUD = new ArrowHUD();
 
     public ModConfig() {

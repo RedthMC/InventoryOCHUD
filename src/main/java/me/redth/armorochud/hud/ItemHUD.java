@@ -10,13 +10,13 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.item.ItemStack;
 
-public abstract class SingleItemHud extends Hud {
+public abstract class ItemHUD extends Hud {
     protected static final Minecraft mc = Minecraft.getMinecraft();
 
     @Dropdown(name = "Show Durability", options = {"None", "On Left", "On Right"}, size = 2)
     public int showDurability = 2;
 
-    public SingleItemHud(int x, int y) {
+    public ItemHUD(int x, int y) {
         super(true, x, y);
     }
 

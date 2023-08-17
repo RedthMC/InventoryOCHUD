@@ -3,7 +3,7 @@ package me.redth.armorochud.hud;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class ChestplateHUD extends SingleItemHud {
+public class ChestplateHUD extends ItemHUD {
     private static final ItemStack exampleItem = new ItemStack(Items.diamond_chestplate);
 
     public ChestplateHUD() {

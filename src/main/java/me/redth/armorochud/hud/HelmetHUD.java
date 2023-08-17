@@ -3,7 +3,7 @@ package me.redth.armorochud.hud;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class HelmetHUD extends SingleItemHud {
+public class HelmetHUD extends ItemHUD {
     private static final ItemStack exampleItem = new ItemStack(Items.diamond_helmet);
 
     public HelmetHUD() {

@@ -3,7 +3,7 @@ package me.redth.armorochud.hud;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class LeggingsHUD extends SingleItemHud {
+public class LeggingsHUD extends ItemHUD {
     private static final ItemStack exampleItem = new ItemStack(Items.diamond_leggings);
 
     public LeggingsHUD() {
