@@ -58,16 +58,16 @@ loom {
             arg("--tweakClass", "cc.polyfrost.oneconfig.loader.stage0.LaunchWrapperTweaker")
 
             // This is enabled so OneConfig can read our Mixins and automatically apply them.
-//            property(
-//                "mixin.debug.export",
-//                "true"
-//            )
+            property(
+                "mixin.debug.export",
+                "true"
+            )
         }
     }
     // Configures the mixins if we are building for forge, useful for when we are dealing with cross-platform projects.
     if (project.platform.isForge) {
         forge {
-//            mixinConfig("mixins.${mod_id}.json")
+            mixinConfig("mixins.${mod_id}.json")
         }
     }
     // Configures the name of the mixin "refmap" using an experimental loom api.
