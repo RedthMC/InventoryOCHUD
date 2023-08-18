@@ -6,23 +6,18 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class ArrowHUD extends ItemHUD {
-    private static final ItemStack exampleItem = new ItemStack(Items.arrow, 10);
-    private static final ItemStack barrier = new ItemStack(Blocks.barrier);
-    private static final ItemStack creative = new ItemStack(Items.arrow);
+    private static final transient ItemStack barrier = new ItemStack(Blocks.barrier);
+    private static final transient ItemStack creative = new ItemStack(Items.arrow);
 
     @Switch(name = "Display when holding bow", size = 2)
     public static boolean whenHoldingBow = true;
 
     public ArrowHUD() {
-        super(0, 476);
+        super(0, 476, new ItemStack(Items.arrow, 10));
     }
 
     @Override
-    protected ItemStack getItem(boolean example) {
-        return example ? exampleItem : getItemShown();
-    }
-
-    private static ItemStack getItemShown() {
+    protected ItemStack getItem() {
         if (mc.thePlayer.capabilities.isCreativeMode)
             return creative;
 
@@ -37,7 +32,9 @@ public class ArrowHUD extends ItemHUD {
     }
 
     private static boolean isHoldingBow() {
-        return !whenHoldingBow || (mc.thePlayer.getHeldItem().getItem() == Items.bow);
+        if (!whenHoldingBow) return true;
+        ItemStack item = mc.thePlayer.getHeldItem();
+        return item != null && item.getItem() == Items.bow;
     }
 
     @Override

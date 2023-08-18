@@ -3,16 +3,8 @@ package me.redth.armorochud.hud;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class BootsHUD extends ItemHUD {
-    private static final ItemStack exampleItem = new ItemStack(Items.diamond_boots);
-
+public class BootsHUD extends EquipmentHUD {
     public BootsHUD() {
-        super(0, 556);
-    }
-
-
-    @Override
-    protected ItemStack getItem(boolean example) {
-        return example ? exampleItem : mc.thePlayer.getEquipmentInSlot(1);
+        super(0, 556, new ItemStack(Items.diamond_boots), 1);
     }
 }
