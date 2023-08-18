@@ -1,6 +1,6 @@
-package me.redth.armorochud.hud;
+package me.redth.inventoryochud.hud;
 
-import cc.polyfrost.oneconfig.hud.Hud;
+import cc.polyfrost.oneconfig.hud.BasicHud;
 import cc.polyfrost.oneconfig.libs.universal.UMatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -8,30 +8,33 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.item.ItemStack;
 
-public abstract class ItemHUD extends Hud {
+public abstract class InventoryHUD extends BasicHud {
     protected static final transient Minecraft mc = Minecraft.getMinecraft();
-    protected final transient ItemStack exampleItem;
 
-    public ItemHUD(int x, int y, ItemStack exampleItem) {
+    public InventoryHUD(int x, int y) {
         super(true, x, y);
-        this.exampleItem = exampleItem;
     }
 
     @Override
     protected void draw(UMatrixStack matrices, float x, float y, float scale, boolean example) {
-        ItemStack item = example ? exampleItem : getItem();
-        if (item == null) return;
-
         GlStateManager.pushMatrix();
         GlStateManager.translate(x, y, 100F);
         GlStateManager.scale(scale, scale, 1.0);
 
-        drawItem(item);
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 9; column++) {
+                int index = row * 9 + column;
+                drawItem(getItem(index));
+                GlStateManager.translate(18, 0, 0);
+            }
+            GlStateManager.translate(-162, 18, 0);
+        }
+
 
         GlStateManager.popMatrix();
     }
 
-    protected abstract ItemStack getItem();
+    protected abstract ItemStack getItem(int index);
 
     @Override
     protected boolean shouldShow() {
@@ -40,15 +43,17 @@ public abstract class ItemHUD extends Hud {
 
     @Override
     protected float getWidth(float scale, boolean example) {
-        return 16 * scale;
+        return 160 * scale;
     }
 
     @Override
     protected float getHeight(float scale, boolean example) {
-        return 16 * scale;
+        return 50 * scale;
     }
 
-    protected void drawItem(ItemStack item) {
+    protected static void drawItem(ItemStack item) {
+        if (item == null) return;
+
         GlStateManager.enableRescaleNormal();
         GlStateManager.enableBlend();
         GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
