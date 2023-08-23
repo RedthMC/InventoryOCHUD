@@ -10,6 +10,7 @@ public class PlayerInventoryHUD extends InventoryHUD {
 
     @Override
     protected ItemStack getItem(int index) {
+        if (mc.thePlayer == null) return null;
         return mc.thePlayer.inventory.mainInventory[index + 9];
     }
 }
